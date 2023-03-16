@@ -19,3 +19,4 @@ this repo is a simple text editor written with Qt and c++
 - [ ] add state for writing instead of selecting texts https://github.com/sjkrb/simple-editor/issues/2
 - [ ] write bold subscript and superscript https://github.com/sjkrb/simple-editor/issues/1
 - [ ] add better support for Unicode 
+- [x] add save and load https://github.com/sjkrb/simple-editor/issues/4
