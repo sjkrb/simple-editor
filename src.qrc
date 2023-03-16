@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/superscript.png</file>
+        <file>icons/subscript.png</file>
+        <file>icons/bold.png</file>
+    </qresource>
+    <qresource prefix="/htmls">
+        <file>index.html</file>
+    </qresource>
+</RCC>
