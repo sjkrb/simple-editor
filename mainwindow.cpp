@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QTextBrowser>
 #include <QLayout>
+#include <QFileDialog>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -119,4 +121,30 @@ void MainWindow::on_actionMy_Resume_triggered()
     wdg->show();
 }
 
+
+
+void MainWindow::on_btn_save_clicked()
+{
+    QFile f(QFileDialog::getSaveFileName(this, "save file", qApp->applicationDirPath(), "HTML files (*.html)"));
+    if(!f.open(QIODevice::WriteOnly))
+    {
+        QMessageBox::critical(this, "ERROR", "cant save file", "ok");
+        return;
+    }
+
+    f.write(ui->plainTextEdit->document()->toHtml().toStdString().c_str());
+}
+
+
+void MainWindow::on_btn_load_clicked()
+{
+    QFile f(QFileDialog::getOpenFileName(this, "load file", qApp->applicationDirPath(), "HTML files (*.html)"));
+    if(!f.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::critical(this, "ERROR", "cant load file", "ok");
+        return;
+    }
+
+    ui->plainTextEdit->document()->setHtml(f.readAll());
+}
 

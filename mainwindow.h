@@ -26,6 +26,10 @@ private slots:
 
     void on_actionMy_Resume_triggered();
 
+    void on_btn_save_clicked();
+
+    void on_btn_load_clicked();
+
 private:
     Ui::MainWindow *ui;
 
